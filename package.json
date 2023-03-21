@@ -7,14 +7,13 @@
   "description": "",
   "scripts": {
     "browsersync": "browser-sync start --directory --server ./public --files ./public/* --startPath index.html",
-    "clean": "rimraf public",
     "css-compile": "tailwindcss build -i src/tailwind/tailwind.css -c src/tailwind/tailwind.config.js -o public/css/tailwind/tailwind.css",
     "css-minified": "tailwindcss build -i src/tailwind/tailwind.css -c src/tailwind/tailwind.config.js -o public/css/tailwind/tailwind.min.css --minify",
     "css": "npm-run-all --sequential css-*",
-    "build": "npm-run-all --sequential clean copy-* css",
-    "watch": "npm-run-all build --parallel clean watch-css watch-static browsersync",
-    "copy-static": "copy-and-watch src/html/* src/assets/* public/",
-    "watch-static": "copy-and-watch --watch src/html/* src/assets/* public/",
+    "build": "mkdir -p public && npm-run-all --sequential copy-* css",
+    "watch": "npm-run-all build --parallel watch-* browsersync",
+    "copy-static": "cp -r src/html/* src/assets/* public/",
+    "watch-static": "nodemon --watch src --ext '*' --exec 'cp -r src/html/* src/assets/* public/'",
     "watch-css": "tailwindcss build -i src/tailwind/tailwind.css -c src/tailwind/tailwind.config.js -o public/css/tailwind/tailwind.min.css --minify --watch"
   },
   "dependencies": {
@@ -23,9 +22,8 @@
   "devDependencies": {
     "autoprefixer": "^10.4.0",
     "browser-sync": "^2.27.7",
-    "cpx": "^1.5.0",
-    "npm-run-all": "^4.1.5",
     "copy-and-watch": "^0.1.6",
-    "rimraf": "^4.4.0"
+    "npm-run-all": "^4.1.5",
+    "nodemon": "^2.0.21"
   }
 }
