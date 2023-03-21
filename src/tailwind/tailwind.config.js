@@ -1,9 +1,8 @@
 module.exports = {
     content: [
-        './src/pug/*.pug',
         './src/html/*.html',
     ],
-    
+
     theme: {
         screens: {
             sm: '640px',
