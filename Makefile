@@ -5,3 +5,7 @@ build:
 .PHONY: dev
 dev:
 	npm run watch
+
+.PHONY: install
+install:
+	npm install
