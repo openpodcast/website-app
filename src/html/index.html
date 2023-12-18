@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
   <link rel="stylesheet" href="/css/tailwind/tailwind.min.css" />
   <script src="/js/main.js"></script>
+  <script src="/js/video.js" defer></script>
 </head>
 
 <body class="antialiased bg-body text-body font-body">
@@ -59,7 +60,17 @@
           </div>
         </div>
       </div>
-      <div class="relative max-w-6xl mt-16 md:mt-8 mb-8 mx-auto"><img src="/images/report/hero-plain.svg" alt="" />
+      <div class="relative max-w-6xl mt-16 md:mt-8 mb-8 mx-auto">
+        <img src="/images/report/hero-plain.svg" alt="" class="cursor-pointer">
+        <div id="playButton" class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer">
+            <img src="/images/play-button.png" alt="Play" class="opacity-50 hover:opacity-100">
+        </div>
+      </div>
+      <div id="videoModal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-40">
+          <video width="1920" height="1080" controls id="videoPlayer" class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+              <source src="/videos/openpodcast.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+          </video>
       </div>
       <div class="container px-4 mx-auto">
         <p class="text-center text-blueGray-500 font-bold font-heading ">bekannt aus...</p>
