@@ -67,11 +67,16 @@
         </div>
       </div>
       <div id="videoModal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-40">
-          <video width="1920" height="1080" controls id="videoPlayer" class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-              <source src="/videos/openpodcast.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-          </video>
-      </div>
+        <video controls id="videoPlayer" class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-1/2">
+            <source src="/videos/openpodcast.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <button id="closeButton" class="absolute top-0 right-0 m-4 bg-white border-none p-5 cursor-pointer font-bold text-xl">
+          X
+        </button>
+        
+    </div>
+    
       <div class="container px-4 mx-auto">
         <p class="text-center text-blueGray-500 font-bold font-heading ">bekannt aus...</p>
         <div class="flex flex-wrap items-center justify-center max-w-4xl mx-auto pt-8 pb-12">
