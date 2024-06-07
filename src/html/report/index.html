@@ -11,7 +11,24 @@
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
     <link rel="stylesheet" href="/css/tailwind/tailwind.min.css" />
     <script src="/js/main.js" defer></script>
-    <script src="/js/video.js" defer></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const playButtonContainer = document.getElementById(
+          "playButtonContainer"
+        );
+        playButtonContainer.addEventListener("click", function () {
+          const heroContainer = document.querySelector(".hero-container");
+          heroContainer.innerHTML = `
+            <div class="relative">
+              <video controls class="relative mx-auto rounded-xl w-full z-10 shadow-2xl">
+                <source src="/videos/openpodcast.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          `;
+        });
+      });
+    </script>
   </head>
   <body class="antialiased bg-body text-body font-body">
     <div>
@@ -69,26 +86,6 @@
               <img src="/images/play-button.svg" alt="Play" />
             </div>
           </div>
-        </div>
-
-        <div
-          id="videoModal"
-          class="hidden fixed inset-0 bg-black bg-opacity-50 z-40"
-        >
-          <video
-            controls
-            id="videoPlayer"
-            class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-1/2"
-          >
-            <source src="/videos/openpodcast.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-          <button
-            id="closeButton"
-            class="absolute top-0 right-0 m-4 bg-white border-none p-5 cursor-pointer font-bold text-xl"
-          >
-            X
-          </button>
         </div>
       </section>
 
