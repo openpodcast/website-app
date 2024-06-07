@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <title>Automatisierte PDF Reports Für Deinen Podcast</title>
@@ -9,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
     <link rel="stylesheet" href="/css/tailwind/tailwind.min.css" />
-    <script src="/js/main.js"></script>
+    <script src="/js/main.js" defer></script>
     <script src="/js/video.js" defer></script>
   </head>
   <body class="antialiased bg-body text-body font-body">
@@ -25,7 +26,6 @@
                 class="w-56"
                 src="/images/logo-white.svg"
                 alt="Open Podcast"
-                width="100"
             /></a>
           </nav>
           <div class="pt-12 text-center">
@@ -91,34 +91,33 @@
           </button>
         </div>
       </section>
+
       <section>
         <div class="container px-4 mx-auto">
-          <div class="container px-4 mx-auto">
-            <h2 class="text-3xl md:text-4xl mt-16 mb-8 font-bold text-center">
-              Bekannt aus
-            </h2>
-            <div
-              class="flex flex-wrap items-center justify-center max-w-4xl mx-auto pt-8 pb-12"
-            >
-              <a href="https://www.media-lab.de/de/media-tech-lab"
-                ><img class="h-20 w-auto m-4" src="/images/ML-Logo.webp" alt=""
-              /></a>
-              <a href="https://engineeringkiosk.dev"
-                ><img
-                  class="h-20 w-auto m-4"
-                  src="/images/engineering-kiosk-logo.png"
-                  alt=""
-              /></a>
-              <a href="https://openpodcast.dev#podcast"
-                ><img
-                  class="h-20 w-auto m-4"
-                  src="/images/open-podcast-small-transparent.png"
-                  alt=""
-              /></a>
-              <a href="https://www.alexanderfreise.com/"
-                ><img class="h-20 w-auto m-4" src="/images/freise.png" alt=""
-              /></a>
-            </div>
+          <h2 class="text-3xl md:text-4xl mt-16 mb-8 font-bold text-center">
+            Unsere Kunden lieben es
+          </h2>
+          <div
+            class="flex flex-wrap items-center justify-center max-w-4xl mx-auto pt-8 pb-12"
+          >
+            <a href="https://www.media-lab.de/de/media-tech-lab"
+              ><img class="h-20 w-auto m-4" src="/images/ML-Logo.webp" alt=""
+            /></a>
+            <a href="https://engineeringkiosk.dev"
+              ><img
+                class="h-20 w-auto m-4"
+                src="/images/engineering-kiosk-logo.png"
+                alt=""
+            /></a>
+            <a href="https://openpodcast.dev#podcast"
+              ><img
+                class="h-20 w-auto m-4"
+                src="/images/open-podcast-small-transparent.png"
+                alt=""
+            /></a>
+            <a href="https://www.alexanderfreise.com/"
+              ><img class="h-20 w-auto m-4" src="/images/freise.png" alt=""
+            /></a>
           </div>
         </div>
         <div class="container px-4 mx-auto my-12">
@@ -173,11 +172,13 @@
                 class="relative mx-auto rounded-xl w-full z-10 shadow-2xl"
                 src="/images/apple_spotify_portrait.png"
                 alt=""
-              /><img
+              />
+              <img
                 class="absolute top-0 left-0 w-40 -ml-12 -mt-12"
                 src="/metis-assets/elements/blob-tear.svg"
                 alt=""
-              /><img
+              />
+              <img
                 class="absolute bottom-0 right-0 w-40 -mr-12 -mb-12"
                 src="/metis-assets/elements/blob-tear.svg"
                 alt=""
@@ -205,6 +206,7 @@
           </div>
         </div>
       </section>
+
       <section
         class="py-20 xl:bg-contain bg-top bg-no-repeat"
         style="background-image: url('/metis-assets/backgrounds/intersect.svg')"
@@ -498,12 +500,9 @@
                           stroke-linejoin="round"
                           stroke-width="2"
                           d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                        ></path></svg
-                      ><span
-                        ><span
-                          ><span>Spotify <span>Daten</span></span></span
-                        ></span
-                      >
+                        ></path>
+                      </svg>
+                      <span>Spotify Daten</span>
                     </li>
                     <li class="flex mb-3">
                       <svg
@@ -519,9 +518,7 @@
                           stroke-width="2"
                           d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
                         ></path></svg
-                      ><span
-                        ><span>Apple Music <span>Daten</span></span></span
-                      >
+                      ><span>Apple Music Daten</span>
                     </li>
                     <li class="flex mb-3">
                       <svg
@@ -537,9 +534,7 @@
                           stroke-width="2"
                           d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
                         ></path></svg
-                      ><span
-                        ><span>Anchor <span>Daten</span></span></span
-                      >
+                      ><span>Anchor Daten</span>
                     </li>
                     <li class="flex items-center mb-3">
                       <svg
@@ -615,6 +610,7 @@
           </div>
         </div>
       </section>
+
       <section
         class="py-20 bg-top bg-no-repeat"
         style="background-image: url('/metis-assets/elements/blob.svg')"
@@ -709,12 +705,7 @@
                 class="inline-block mx-auto lg:mx-0 text-3xl font-semibold leading-none"
                 href="#"
               >
-                <img
-                  class="w-48"
-                  src="/images/logo.svg"
-                  alt="Open Podcast"
-                  width="auto"
-                />
+                <img class="w-48" src="/images/logo.svg" alt="Open Podcast" />
               </a>
             </div>
             <div class="w-full lg:w-2/5 px-3 mb-8 lg:mb-0">
@@ -723,8 +714,10 @@
               >
                 <span
                   class="text-blue-600 font-bold mb-4 block text-lg tracking-wider"
-                  >Google Analytics für Podcasts</span
-                >Entdecke unsere Podcast-Analyseplattform: Vereint Spotify und
+                >
+                  Google Analytics für Podcasts
+                </span>
+                Entdecke unsere Podcast-Analyseplattform: Vereint Spotify und
                 Apple Statistiken, bietet Geo- und Soziodemographische Daten und
                 ermöglicht historische Analysen für effektives
                 Podcast-Marketing.
@@ -749,14 +742,14 @@
                 Kontakt
               </p>
               <p class="text-sm text-blueGray-400">
-                <a href="mailto: echo@openpodcast.dev">echo@openpodcast.dev</a>
+                <a href="mailto:echo@openpodcast.dev">echo@openpodcast.dev</a>
               </p>
             </div>
           </div>
           <div
             class="flex flex-col lg:flex-row items-center lg:justify-between"
           >
-            <p class="text-xs text-blueGray-500">© 2024 Open Podcast<br /></p>
+            <p class="text-xs text-blueGray-500">© 2024 Open Podcast</p>
           </div>
         </div>
       </section>
