@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const videoPlayer = document.getElementById("videoPlayer");
 
   document.getElementById("playButton").addEventListener("click", function () {
-    console.log("click");
     videoModal.style.display = "block";
     videoPlayer.play();
   });
@@ -22,7 +21,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   videoModal.addEventListener("click", function (event) {
     if (event.target === videoModal) {
-      console.log("click modal");
       this.style.display = "none";
       videoPlayer.pause();
     }
