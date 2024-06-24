@@ -2,35 +2,39 @@
 <html lang="en">
 <head>
   <title>Automatisierte PDF Reports Für Deinen Podcast</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="title" content="Automatisierte PDF Reports Für Deinen Podcast">
   <meta name="description" content="Alle Spotify und Apple Daten auf einen Blick. Übersichliche PDF Reports für Deinen Podcast. Jetzt loslegen!">
   <meta name="keywords" content="Podcast, Spotify, Apple, Podigee, Anchor, YouTube">
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="canonical" href="https://www.openpodcast.app">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.openpodcast.app">
+  <meta property="og:title" content="Automatisierte PDF Reports Für Deinen Podcast">
+  <meta property="og:description" content="Alle Spotify und Apple Daten auf einen Blick. Übersichliche PDF Reports für Deinen Podcast. Jetzt loslegen!">
+  <meta property="og:image" content="https://www.openpodcast.app/images/social.jpg">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.openpodcast.app">
+  <meta property="twitter:title" content="Automatisierte PDF Reports Für Deinen Podcast">
+  <meta property="twitter:description" content="Alle Spotify und Apple Daten auf einen Blick. Übersichliche PDF Reports für Deinen Podcast. Jetzt loslegen!">
+  <meta property="twitter:image" content="https://www.openpodcast.app/images/social.jpg">
+
+  <link rel="preload" href="https://rsms.me/inter/inter.css" as="style">
+  <link rel="preload" href="/css/tailwind/tailwind.min.css" as="style">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
   <link rel="stylesheet" href="/css/tailwind/tailwind.min.css">
+
   <script src="/js/main.js" defer></script>
-  <script>
-            document.addEventListener("DOMContentLoaded", function () {
-                const playButtonContainer = document.getElementById(
-                    "playButtonContainer",
-                );
-                playButtonContainer.addEventListener("click", function () {
-                    const heroContainer =
-                        document.querySelector(".hero-container");
-                    heroContainer.innerHTML = `
-            <div class="relative">
-              <video autoplay controls class="relative mx-auto rounded-xl w-full z-10 shadow-2xl">
-                <source src="/videos/openpodcast.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            </div>
-          `;
-                });
-            });
-  </script>
+  <script src="/js/playButton.js" defer></script>
 </head>
+<body>
+</body>
+</html>
 <body class="antialiased bg-body text-body font-body">
   <div>
     <section style="background: #1f43b8" class="xl:bg-contain bg-top bg-no-repeat flex flex-col gap-0">
