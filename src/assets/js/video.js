@@ -1,28 +1,60 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const videoModal = document.getElementById("videoModal");
-  const videoPlayer = document.getElementById("videoPlayer");
+  const heroContainer = document.querySelector(".hero-container");
+  const playButtonContainer = document.getElementById("playButtonContainer");
 
-  document.getElementById("playButton").addEventListener("click", function () {
-    videoModal.style.display = "block";
-    videoPlayer.play();
-  });
+  if (heroContainer && playButtonContainer) {
+    playButtonContainer.addEventListener("click", function () {
+      // Create modal elements
+      const videoModal = document.createElement("div");
+      videoModal.id = "videoModal";
+      videoModal.style.cssText =
+        "display:none; position:fixed; z-index:1000; left:0; top:0; width:100%; height:100%; background-color:rgba(0,0,0,0.9);";
 
-  document.getElementById("closeButton").addEventListener("click", function () {
-    videoModal.style.display = "none";
-    videoPlayer.pause();
-  });
+      const videoPlayer = document.createElement("video");
+      videoPlayer.id = "videoPlayer";
+      videoPlayer.controls = true;
+      videoPlayer.style.cssText =
+        "position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); max-width:90%; max-height:90%;";
 
-  document.addEventListener("keydown", function (event) {
-    if (event.key === "Escape") {
-      videoModal.style.display = "none";
-      videoPlayer.pause();
-    }
-  });
+      const closeButton = document.createElement("button");
+      closeButton.id = "closeButton";
+      closeButton.innerHTML = "&times;";
+      closeButton.style.cssText =
+        "position:absolute; top:15px; right:35px; color:white; font-size:40px; font-weight:bold; cursor:pointer;";
 
-  videoModal.addEventListener("click", function (event) {
-    if (event.target === videoModal) {
-      this.style.display = "none";
-      videoPlayer.pause();
-    }
-  });
+      // Set video source (replace with your actual video URL)
+      videoPlayer.src = "/videos/openpodcast.mp4";
+
+      // Append elements
+      videoModal.appendChild(videoPlayer);
+      videoModal.appendChild(closeButton);
+      document.body.appendChild(videoModal);
+
+      // Show modal and play video
+      videoModal.style.display = "block";
+      videoPlayer.play();
+
+      // Close button functionality
+      closeButton.addEventListener("click", closeModal);
+
+      // Close on clicking outside the video
+      videoModal.addEventListener("click", function (event) {
+        if (event.target === videoModal) {
+          closeModal();
+        }
+      });
+
+      // Close on pressing Escape key
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+          closeModal();
+        }
+      });
+
+      function closeModal() {
+        videoModal.style.display = "none";
+        videoPlayer.pause();
+      }
+    });
+  }
 });
