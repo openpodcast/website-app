@@ -31,6 +31,8 @@
 
   <script src="/js/main.js" defer></script>
   <script src="/js/video.js" defer></script>
+  <script src="/js/translations.js"></script>
+  <script src="/js/languageSwitcher.js" defer></script>
 </head>
 <body>
 </body>
@@ -41,14 +43,18 @@
       <div class="container px-4 mx-auto">
         <nav class="flex justify-between items-center py-6">
           <a class="text-3xl font-semibold leading-none" href="#"><img class="w-56" src="/images/logo-white.svg" alt="Open Podcast"></a>
+          <div class="language-switcher">
+            <button onclick="switchLanguage('de')" class="px-4 py-2 rounded text-2xl">🇩🇪</button>
+            <button onclick="switchLanguage('en')" class="px-4 py-2 rounded text-2xl">🇬🇧</button>
+          </div>
         </nav>
         <div class="pt-12 text-center">
           <div class="max-w-2xl mx-auto md:mt-32 md:mb-16">
-            <h1 class="text-6xl md:text-6xl mb-4 font-bold font-heading text-white">Hübsche PDF Reports für Deinen Podcast</h2>
-            <p class="text-xl text-white leading-relaxed">Alle Spotify und Apple Daten auf einen Blick.</p>
+            <h1 class="text-6xl md:text-6xl mb-4 font-bold font-heading text-white" data-i18n="heroTitle"></h1>
+            <p class="text-xl text-white leading-relaxed" data-i18n="heroSubtitle"></p>
           </div>
           <div class="mx-auto">
-            <a class="w-full md:w-auto py-4 px-8 text-xl text-white font-semibold bg-red-600 hover:bg-red-700 rounded inline-block md:mt-0 mt-4" href="https://connect.openpodcast.app/">Podcast Verbinden</a>
+            <a class="w-full md:w-auto py-4 px-8 text-xl text-white font-semibold bg-red-600 hover:bg-red-700 rounded inline-block md:mt-0 mt-4" href="https://connect.openpodcast.app/" data-i18n="connectButton"></a>
           </div>
         </div>
       </div>
@@ -62,9 +68,10 @@
         </div>
       </div>
     </section>
+    
     <section>
       <div class="container px-4 mx-auto">
-        <h2 class="text-3xl md:text-4xl mt-16 mb-8 font-bold text-center">Unsere Kunden lieben es</h2>
+        <h2 class="text-3xl md:text-4xl mt-16 mb-8 font-bold text-center" data-i18n="customersLove"></h2>
         <div class="flex flex-wrap items-center justify-center max-w-4xl mx-auto pt-8 pb-12">
           <a href="https://www.media-lab.de/de/media-tech-lab"><img class="h-20 w-auto m-4" src="/images/ML-Logo.webp" alt="ML-Logo"></a> <a href="https://engineeringkiosk.dev"><img class="h-20 w-auto m-4" src="/images/engineering-kiosk-logo.png" alt="engineering-kiosk-logo"></a> <a href="https://openpodcast.dev#podcast"><img class="h-20 w-auto m-4" src="/images/open-podcast-small-transparent.png" alt="open-podcast-small-transparent"></a> <a href="https://www.alexanderfreise.com/"><img class="h-20 w-auto m-4" src="/images/freise.jpg" alt="freise"></a>
         </div>
@@ -73,8 +80,12 @@
         <div class="flex flex-wrap lg:flex-nowrap gap-4">
           <div class="flex w-full lg:w-1/2 lg:max-w-lg lg:h-128 px-4 lg:pl-16 mb-12 lg:mb-0">
             <div class="my-auto mx-auto pt-8 lg:pt-0 max-w-2xl lg:max-w-lg">
-              <h2 class="text-3xl md:text-4xl mb-4 font-bold font-heading"><span>Alle Daten für die</span> <span class="text-blue-600">Formatentwicklung</span>.</h2>
-              <p class="text-blueGray-400 leading-loose mb-6">Wer hört wo? Geo- und Soziodemographische Daten wie Alter, Geschlecht und Stadt. Wir liefern alle Kennzahlen für eure Content Strategie.</p><a class="inline-block py-4 px-8 text-xs text-white font-semibold leading-none bg-blue-600 hover:bg-blue-700 rounded" href="https://connect.openpodcast.app/">Jetzt loslegen</a>
+              <h2 class="text-3xl md:text-4xl mb-4 font-bold font-heading">
+                <span data-i18n="allDataForFormat"></span>
+                <span class="text-blue-600" data-i18n="formatDevelopment"></span>.
+              </h2>
+              <p class="text-blueGray-400 leading-loose mb-6" data-i18n="formatDescription"></p>
+              <a class="inline-block py-4 px-8 text-xs text-white font-semibold leading-none bg-blue-600 hover:bg-blue-700 rounded" href="https://connect.openpodcast.app/" data-i18n="getStarted"></a>
             </div>
           </div>
           <div class="relative w-full lg:w-1/2 my-12 lg:my-0"><img class="relative mx-auto rounded-xl w-full z-10 shadow-2xl" src="/images/audience_growth_portrait.jpg" alt="audience_growth_portrait"> <img class="absolute top-0 left-0 w-40 -ml-12 -mt-12" src="/metis-assets/elements/blob-tear.svg" alt="blob-tear"> <img class="absolute bottom-0 right-0 w-40 -mr-12 -mb-12" src="/metis-assets/elements/blob-tear.svg" alt="blob-tear"></div>
@@ -87,8 +98,8 @@
           <div class="relative w-full lg:w-1/2 order-1 lg:order-0 my-12 lg:my-0"><img class="relative mx-auto rounded-xl w-full z-10 shadow-2xl" src="/images/apple_spotify_portrait.jpg" alt="apple_spotify_portrait"> <img class="absolute top-0 left-0 w-40 -ml-12 -mt-12" src="/metis-assets/elements/blob-tear.svg" alt="blob-tear"> <img class="absolute bottom-0 right-0 w-40 -mr-12 -mb-12" src="/metis-assets/elements/blob-tear.svg" alt="blob-tear"></div>
           <div class="flex order-1 lg:order-0 w-full lg:w-1/2 lg:h-128 lg:max-w-lg lg:ml-auto px-4 lg:pr-24 xl:pr-4">
             <div class="my-auto mx-auto pt-8 lg:pt-0 max-w-2xl lg:max-w-lg">
-              <h2 class="text-3xl md:text-4xl mb-4 font-bold font-heading"><span class="text-blue-600">Podigee, Anchor, YouTube?</span> <span>– kein Problem.</span></h2>
-              <p class="text-blueGray-400 leading-loose mb-6">Wir importieren Daten aller großen Podcast Plattformen. Einfach, schnell und verständlich. DSVGO/GDPR konform.</p><a class="inline-block py-4 px-8 text-xs text-white font-semibold leading-none bg-blue-600 hover:bg-blue-700 rounded" href="https://connect.openpodcast.app/">Zur Anmeldung</a>
+              <h2 class="text-3xl md:text-4xl mb-4 font-bold font-heading"><span class="text-blue-600">Podigee, Anchor, YouTube?</span> <span data-i18n="noProblem"></span></h2>
+              <p class="text-blueGray-400 leading-loose mb-6" data-i18n="otherPlatformsDescription"></p><a class="inline-block py-4 px-8 text-xs text-white font-semibold leading-none bg-blue-600 hover:bg-blue-700 rounded" href="https://connect.openpodcast.app/" data-i18n="register"></a>
             </div>
           </div>
         </div>
@@ -97,28 +108,28 @@
     <section class="py-20 xl:bg-contain bg-top bg-no-repeat" style="background-image: url(&quot;/metis-assets/backgrounds/intersect.svg&quot;);">
       <div class="container px-4 mx-auto">
         <div class="text-center mb-16">
-          <h2 class="max-w-lg mx-auto mb-4 text-4xl font-bold font-heading"><span>Wir wachsen mit Dir.<br></span> <span>Von Podcast</span> <span class="text-blue-600">Starter</span> bis <span class="text-blue-600">Profi</span>.</h2>
+          <h2 class="max-w-lg mx-auto mb-4 text-4xl font-bold font-heading"><span data-i18n="growWithYou"></span><br /><span class="text-blue-600" data-i18n="fromStarterToPro"></span>.</h2>
           <p class="max-w-sm mx-auto text-lg text-blueGray-400"><br></p>
         </div>
         <div class="flex flex-wrap -mx-3">
           <div class="w-full md:w-1/2 lg:w-1/3 px-3 mb-6">
             <div class="pt-16 pb-8 px-4 text-center bg-white rounded shadow">
               <img class="h-32 mb-8 mx-auto" src="/images/podcast.svg" alt="podcast">
-              <h3 class="mb-2 text-4xl font-bold font-heading">Podcast Report</h3><span class="text-4xl text-blue-600 font-bold font-heading">€39<span class="text-lg">/Monat/Podcast</span></span>
+              <h3 class="mb-2 text-4xl font-bold font-heading">Podcast Report</h3><span class="text-4xl text-blue-600 font-bold font-heading">€39<span class="text-lg" data-i18n="monthPodcast"></span></span>
               <p class="mt-2 mb-8 text-blueGray-400"></p>
               <div class="flex flex-col items-center mb-8">
                 <ul>
                   <li class="flex items-center mb-3">
                     <svg class="w-6 h-6 mr-2 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="currentcolor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span><span>Spotify <span>Daten</span></span></span>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span><span data-i18n="spotifyData"></span></span>
                   </li>
                   <li class="flex items-center mb-3">
                     <svg class="w-6 h-6 mr-2 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="currentcolor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span>Apple Podcast <span>Daten</span></span>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span data-i18n="appleData"></span>
                   </li>
                   <li class="flex items-center mb-3">
                     <svg class="w-6 h-6 mr-2 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="currentcolor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span>Anchor <span>Daten</span></span>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span data-i18n="anchorData"></span>
                   </li>
                   <li class="flex items-center mb-3">
                     <svg class="w-6 h-6 mr-2 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="currentcolor">
@@ -136,32 +147,32 @@
                 </ul>
               </div>
               <div>
-                <a class="block sm:inline-block py-4 px-6 mb-4 sm:mb-0 sm:mr-3 text-xs text-white text-center font-semibold leading-none bg-blue-600 hover:bg-blue-700 rounded" href="https://connect.openpodcast.app/">Kostenlos Starten</a>
+                <a class="block sm:inline-block py-4 px-6 mb-4 sm:mb-0 sm:mr-3 text-xs text-white text-center font-semibold leading-none bg-blue-600 hover:bg-blue-700 rounded" href="https://connect.openpodcast.app/" data-i18n="startFree"></a>
               </div>
             </div>
           </div>
           <div class="w-full md:w-1/2 lg:w-1/3 px-3 mb-6">
             <div class="pt-16 pb-8 px-4 text-center text-white bg-blue-600 rounded shadow">
               <img class="h-32 mb-8 mx-auto" src="/images/podcast_plus.svg" alt="podcast_plus">
-              <h3 class="mb-2 text-4xl font-bold font-heading">Agentur Paket</h3><span class="text-4xl text-white font-bold font-heading">€99<span class="text-lg">/Monat</span></span>
-              <p class="mt-2 mb-8">bis zu 3 Podcasts</p>
+              <h3 class="mb-2 text-4xl font-bold font-heading" data-i18n="agencyPackage"></h3><span class="text-4xl text-white font-bold font-heading">€99<span class="text-lg" data-i18n="perMonth"></span></span>
+              <p class="mt-2 mb-8" data-i18n="upTo3Podcasts"></p>
               <div class="flex flex-col items-center mb-8">
                 <ul>
                   <li class="flex items-center mb-3">
                     <svg class="w-6 h-6 mr-2 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="currentcolor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span><span>Spotify <span>Daten</span></span></span>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span><span data-i18n="spotifyData">Spotify <span>Daten</span></span></span>
                   </li>
                   <li class="flex items-center mb-3">
                     <svg class="w-6 h-6 mr-2 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="currentcolor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span>Apple Podcast <span>Daten</span></span>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span data-i18n="appleData"></span>
                   </li>
                   <li class="flex items-center mb-3">
                     <svg class="w-6 h-6 mr-2 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="currentcolor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span>Anchor <span>Daten</span></span>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span data-i18n="anchorData"></span>
                   </li>
                   <li class="flex items-center mb-3">
                     <svg class="w-6 h-6 mr-2 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="currentcolor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span>2 Stunden PDF-Report Anpassung gratis.</span>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span data-i18n="pdfReportCustomization"></span>
                   </li>
                   <li class="flex items-center mb-3">
                     <svg class="w-6 h-6 mr-2 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="currentcolor">
@@ -173,36 +184,36 @@
                 </ul>
               </div>
               <div>
-                <a class="block sm:inline-block py-4 px-6 mb-4 sm:mb-0 sm:mr-3 text-xs text-blue-600 font-semibold leading-none bg-white hover:bg-blueGray-50 rounded" href="https://connect.openpodcast.app/">Jetzt Starten</a>
+                <a class="block sm:inline-block py-4 px-6 mb-4 sm:mb-0 sm:mr-3 text-xs text-blue-600 font-semibold leading-none bg-white hover:bg-blueGray-50 rounded" href="https://connect.openpodcast.app/" data-i18n="getStarted"></a>
               </div>
             </div>
           </div>
           <div class="w-full lg:w-1/3 px-3 mb-6">
             <div class="pt-16 pb-8 px-4 text-center bg-white rounded shadow">
               <img class="h-32 mb-8 mx-auto" src="/images/podcast_pro.svg" alt="podcast_pro">
-              <h3 class="mb-2 text-4xl font-bold font-heading">Agentur Paket Plus</h3><span class="text-4xl text-blue-600 font-bold font-heading">€149<span class="text-lg">/Monat</span></span>
-              <p class="mt-2 mb-8 text-blueGray-400">bis zu 5 Podcasts. (<a href="mailto:info@openpodcast.dev" class="underline text-blue-600">mehr Podcasts?</a>)</p>
+              <h3 class="mb-2 text-4xl font-bold font-heading">Agentur Paket Plus</h3><span class="text-4xl text-blue-600 font-bold font-heading">€149<span class="text-lg" data-i18n="perMonth"></span></span>
+              <p class="mt-2 mb-8 text-blueGray-400"><span data-i18n="upTo5Podcasts"></span> (<a href="mailto:info@openpodcast.dev" class="underline text-blue-600" data-i18n="morePodcasts"></a>)</p>
               <div class="flex flex-col items-center mb-8">
                 <ul class="text-blueGray-400">
                   <li class="flex mb-3">
                     <svg class="w-6 h-6 mr-2 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="currentcolor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg> <span>Spotify Daten</span>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg> <span data-i18n="spotifyData"></span>
                   </li>
                   <li class="flex mb-3">
                     <svg class="w-6 h-6 mr-2 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="currentcolor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span>Apple Music Daten</span>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span data-i18n="appleData"></span>
                   </li>
                   <li class="flex mb-3">
                     <svg class="w-6 h-6 mr-2 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="currentcolor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span>Anchor Daten</span>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span data-i18n="anchorData"></span>
                   </li>
                   <li class="flex items-center mb-3">
                     <svg class="w-6 h-6 mr-2 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="currentcolor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span>4 Stunden PDF-Report Anpassung gratis.</span>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span data-i18n="pdfReportCustomizationPlus"></span>
                   </li>
                   <li class="flex mb-3">
                     <svg class="w-6 h-6 mr-2 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="currentcolor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span>Automatische PDF Reports</span>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span data-i18n="automaticPdfReports"></span>
                   </li>
                   <li class="flex">
                     <svg class="w-6 h-6 mr-2 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="currentcolor">
@@ -211,15 +222,15 @@
                 </ul>
               </div>
               <div>
-                <a class="block sm:inline-block py-4 px-6 mb-4 sm:mb-0 sm:mr-3 text-xs text-white text-center font-semibold leading-none bg-blue-600 hover:bg-blue-700 rounded" href="mailto:info@openpodcast.dev">Kontaktiere Uns</a>
+                <a class="block sm:inline-block py-4 px-6 mb-4 sm:mb-0 sm:mr-3 text-xs text-white text-center font-semibold leading-none bg-blue-600 hover:bg-blue-700 rounded" href="mailto:info@openpodcast.dev" data-i18n="contactUs"></a>
               </div>
             </div>
           </div>
         </div>
         <div class="text-center text-gray-600">
-          Mehr als 5 Podcasts oder Spezialanforderungen, wie eine<br>
-          <span class="font-bold">API-Anbindung</span> an deine interne Analyticsplattform oder <span class="font-bold">Dashboardlösung</span>?<br>
-          <a href="mailto:info@openpodcast.dev" class="underline text-blue-600">Kontaktiere unser Team...</a>
+          <span data-i18n="specialRequirements">Mehr als 5 Podcasts oder Spezialanforderungen, wie eine</span><br>
+          <span data-i18n="apiIntegration" class="font-bold">API-Anbindung</span> <span data-i18n="analyticsOrDashboard">an deine interne Analyticsplattform oder Dashboardlösung?</span><br>
+          <a href="mailto:info@openpodcast.dev" class="underline text-blue-600" data-i18n="contactOurTeam">Kontaktiere unser Team...</a>
         </div>
       </div>
     </section>
@@ -228,7 +239,7 @@
         <div class="relative py-20 px-4 lg:p-20">
           <div class="absolute top-0 left-0 -mt-8"><img class="h-16" src="/metis-assets/elements/dots-left.svg" alt="dots-left"></div>
           <div class="max-w-lg mx-auto text-center">
-            <h2 class="mb-4 text-3xl lg:text-4xl font-bold font-heading"><span id="register">Wir zeigen Dir was in Deinen Daten steckt!</span></h2>
+            <h2 class="mb-4 text-3xl lg:text-4xl font-bold font-heading"><span id="register" data-i18n="showYouData"></span></h2>
             <div class="container px-4 mx-auto">
               <div class="flex flex-wrap items-center justify-center max-w-4xl mx-auto pt-8 pb-12">
                 <div class="w-1/5 px-3 mb-8"><img class="mx-auto" title="Spotify" src="/images/icons/spotify.svg" alt="spotify"></div>
@@ -238,8 +249,8 @@
               </div>
             </div>
             <div class="flex flex-wrap max-w-md mx-auto">
-              <a class="w-full py-4 px-8 text-xl leading-relaxed text-white bg-blue-600 hover:bg-blue-700 rounded" href="https://connect.openpodcast.app">Podcast verbinden</a>
-              <p class="text-center mt-8 text-blueGray-600 text-lg leading-relaxed mx-auto">Oder <a href="https://cal.com/openpodcast/demo" class="text-blue-600 underline">vereinbare einen Termin mit uns</a>.</p>
+              <a class="w-full py-4 px-8 text-xl leading-relaxed text-white bg-blue-600 hover:bg-blue-700 rounded" href="https://connect.openpodcast.app" data-i18n="connectPodcast"></a>
+              <p class="text-center mt-8 text-blueGray-600 text-lg leading-relaxed mx-auto"><a href="https://cal.com/openpodcast/demo" class="text-blue-600 underline" data-i18n="scheduleDemo"></a>.</p>
             </div>
           </div>
           <div class="absolute bottom-0 right-0"><img class="h-16" src="/metis-assets/elements/dots-right.svg" alt="dots-right"></div>
@@ -248,7 +259,7 @@
     </section>
     <section class="max-w-2xl mx-auto mb-8 overflow-x-hidden">
       <div class="container px-4 mx-auto">
-        <h2 class="text-4xl font-bold text-center mb-12">Häufig gestellte Fragen</h2>
+        <h2 class="text-4xl font-bold text-center mb-12" data-i18n="faq"></h2>
         <div class="faq-section">
           <details class="mb-4">
             <summary class="font-bold cursor-pointer">
@@ -361,8 +372,8 @@
         <div class="relative py-20 px-4 lg:p-20">
           <div class="max-w-lg mx-auto text-center">
             <div class="flex flex-wrap max-w-md mx-auto">
-              <a class="w-full py-4 px-8 text-xl leading-relaxed text-white bg-blue-600 hover:bg-blue-700 rounded" href="https://connect.openpodcast.app">Podcast verbinden</a>
-              <p class="text-center mt-8 text-blueGray-600 text-lg leading-relaxed mx-auto">Oder <a href="https://cal.com/openpodcast/demo" class="text-blue-600 underline">vereinbare einen Termin mit uns</a>.</p>
+              <a class="w-full py-4 px-8 text-xl leading-relaxed text-white bg-blue-600 hover:bg-blue-700 rounded" href="https://connect.openpodcast.app" data-i18n="connectButton"></a>
+              <p class="text-center mt-8 text-blueGray-600 text-lg leading-relaxed mx-auto"><a href="https://cal.com/openpodcast/demo" class="text-blue-600 underline" data-i18n="scheduleDemo">Oder vereinbare einen Termin mit uns</a>.</p>
             </div>
           </div>
         </div>
@@ -384,7 +395,10 @@
             <a class="inline-block mx-auto lg:mx-0 text-3xl font-semibold leading-none" href="#"><img class="w-48" src="/images/logo.svg" alt="Open Podcast"></a>
           </div>
           <div class="w-full lg:w-2/5 px-3 mb-8 lg:mb-0">
-            <p class="max-w-md mx-auto lg:max-w-full lg:mx-0 lg:pr-32 text-sm text-blueGray-400 leading-relaxed"><span class="text-blue-600 font-bold mb-4 block text-lg tracking-wider">Google Analytics für Podcasts</span> Entdecke unsere Podcast-Analyseplattform: Vereint Spotify und Apple Statistiken, bietet Geo- und Soziodemographische Daten und ermöglicht historische Analysen für effektives Podcast-Marketing.</p>
+            <p class="max-w-md mx-auto lg:max-w-full lg:mx-0 lg:pr-32 text-sm text-blueGray-400 leading-relaxed">
+              <span class="text-blue-600 font-bold mb-4 block text-lg tracking-wider" data-i18n="footerTitle"></span>
+              <span data-i18n="footerDescription"></span>
+            </p>
           </div>
           <div class="w-full lg:w-1/5 px-3 mb-8 lg:mb-0">
             <p class="mb-2 lg:mb-4 lg:text-lg font-bold font-heading text-blueGray-800">Impressum</p>
